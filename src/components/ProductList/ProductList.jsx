@@ -1,22 +1,15 @@
 import React, { Component } from "react";
-import { host } from "../../env";
+import { connect } from "react-redux";
+import { fetch_products } from '../../actions/productAction';
 
 class ProductList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      products: []
-    };
-  }
 
   componentDidMount() {
-    fetch(host + "/proizvodi.json")
-      .then(res => res.json())
-      .then(data => this.setState({ products: data }));
+    this.props.fetch_products();
   }
 
   render() {
-    const { products } = this.state;
+    const { products } = this.props;
     let Products = products.map(product => (
       <li key={product.id}>{product.naziv}</li>
     ));
@@ -29,4 +22,8 @@ class ProductList extends Component {
   }
 }
 
-export default ProductList;
+const mapStateToProps = state => ({
+  products: state.products.products
+});
+
+export default connect(mapStateToProps, {fetch_products})(ProductList);

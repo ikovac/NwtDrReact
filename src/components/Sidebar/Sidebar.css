@@ -1,0 +1,25 @@
+.sidebar {
+  margin-top: 45px;
+  background-color: white;
+  padding: 10px;
+  box-shadow: 3px 4px 7px 1px #484848;
+  height: fit-content;
+}
+
+.sidebar ol {
+  padding: 0 20px;
+  margin: 0;
+}
+
+.sidebar ol li {
+  margin-bottom: 10px;
+}
+
+.sidebar ol li a {
+  color: black;
+  text-decoration: none;
+}
+
+.sidebar ol li a:hover {
+  color: #34a0ff;
+}

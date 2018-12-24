@@ -5,7 +5,6 @@
     "image_name": "carbonia.jpg",
     "cijena": 1690,
     "opis": "Carbonia 115 - choice for deep water spearfishing. Amazing speed, brutal penetration and accuracy will leave you amazed every time you will pull the trigger.",
-    "favorit": true,
     "recenzije": [
       {
         "recenzija_id": 1,
@@ -27,7 +26,6 @@
     "image_name": "bluetec_acid.jpg",
     "cijena": 700,
     "opis": "Carbon-Fiber mono-block speargun from Bleutec. Includes 2x16 BleuTec Speed power bands and BleuTec Diamond spearshaft. Does not include reel.",
-    "favorit": false,
     "recenzije": [
       {
         "recenzija_id": 3,
@@ -49,7 +47,6 @@
     "image_name": "megaforce.jpg",
     "cijena": 610,
     "opis": "Graphite is an elegant design speargun, an exclusive product fruit of years of study and researches. It is intended for people fond of technology at art level, people who can recognize technology at top level. The homogeneity and fluidity of movements under water makes the lining up of Graphite to a moving target very easy, quick and effective.",
-    "favorit": false,
     "recenzije": [
       {
         "recenzija_id": 4,

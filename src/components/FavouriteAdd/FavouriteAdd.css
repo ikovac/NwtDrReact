@@ -1,0 +1,11 @@
+.fa-heart {
+  margin-left: 10px;
+  cursor: pointer;
+}
+.fa-heart:hover {
+  color: red;
+}
+
+.fa-heart.added {
+  color: red;
+}

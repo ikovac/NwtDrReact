@@ -1,8 +1,8 @@
-import { FETCH_PRODUCT_LIST, FETCH_PRODUCT } from "../actions/actionTypes";
+import { FETCH_PRODUCT_LIST, SEARCH_PRODUCT } from "../actions/actionTypes";
 
 let initialState = {
   products: [],
-  product: {}
+  searched_products: []
 };
 
 export default function product(state = initialState, action) {
@@ -10,13 +10,22 @@ export default function product(state = initialState, action) {
     case FETCH_PRODUCT_LIST:
       return {
         ...state,
-        products: action.payload
+        products: action.payload,
+        searched_products: action.payload
       };
-    case FETCH_PRODUCT:
-      return {
-        ...state,
-        product: action.payload
-      };
+    case SEARCH_PRODUCT:
+      if (action.all) {
+        return state;
+      } else {
+        return {
+          ...state,
+          searched_products: state.products.filter(
+            item =>
+              item.naziv.toUpperCase().includes(action.value) ||
+              item.opis.toUpperCase().includes(action.value)
+          )
+        };
+      }
     default:
       return state;
   }

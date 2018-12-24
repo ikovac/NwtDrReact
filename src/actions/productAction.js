@@ -1,4 +1,4 @@
-import { FETCH_PRODUCT_LIST, FETCH_PRODUCT } from "./actionTypes";
+import { FETCH_PRODUCT_LIST, SEARCH_PRODUCT } from "./actionTypes";
 import { host } from "../env";
 
 export function fetch_products() {
@@ -9,15 +9,13 @@ export function fetch_products() {
   };
 }
 
-export function fetch_product(product_id) {
+export function search_products(input) {
   return function(dispatch) {
-    fetch(host + "/proizvodi.json")
-      .then(res => res.json())
-      .then(data => {
-        dispatch({
-          type: FETCH_PRODUCT,
-          payload: data.find(prod => prod.id === product_id)
-        });
-      });
+    const searched_value = input.toUpperCase();
+    if (searched_value === "") {
+      dispatch({type: SEARCH_PRODUCT, all: true});
+    } else {
+      dispatch({type: SEARCH_PRODUCT, all: false, value: searched_value});
+    }
   };
 }
